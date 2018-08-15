@@ -29,3 +29,22 @@ p.then((res) => {
   console.log(err); // throw err
  })
 ```
+## 在函数中返回Promise类型
+需求：定义一个函数，函数中要执行一个延时操作，延时操作完成后保存一个值
+```
+function delayed() {
+  return new Promise((resolve, reject) => {
+    setTimeout(function() {
+      resolve("2000");
+    }, 1000)
+  });
+}
+delayed().then((res) => {
+  console.log(res); // 1s后打印2000 
+})
+.catch((err) => {
+  console.log(err);
+})
+```
+promise一般用在网络异步请求时，没有等到数据返回就开始执行下一步。有了promise，把网络请求后的操作放在then方法中，把错误放在catch方法中。
+
