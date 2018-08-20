@@ -4,7 +4,7 @@
 ---
 promise是异步解决方案  
 需求:设定一个函数，在三秒之后打印“promise is great！”
-```
+```js
 let pro = new Promise((resolve, reject) => {
   setTimeout(function () {
     resolve("promise is great!");
@@ -16,7 +16,7 @@ pro.then((response) => { // 这里response为了方便初次接触的同志理�
 ```
 resolve函数中所接收的参数是任务执行成功后的结果，reject是执行失败后的结果。
 再写一个异步请求的demo。
-```
+```js
 let p = new Promise((resolve, reject) => {
    wx.request(url, data, (res) => {
      res.data && resolve(res.data);
@@ -31,7 +31,7 @@ p.then((res) => {
 ```
 ## 在函数中返回Promise类型
 需求：定义一个函数，函数中要执行一个延时操作，延时操作完成后保存一个值
-```
+```js
 function delayed() {
   return new Promise((resolve, reject) => {
     setTimeout(function() {
