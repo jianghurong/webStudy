@@ -1,6 +1,7 @@
 # 上传进度条
 ---
 效果预览：  
+---
 ![image](https://github.com/jianghurong/webStudy/blob/master/vue/gif/文件上传.gif) 
 ---
 http请求使用了axios库  
