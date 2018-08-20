@@ -2,7 +2,7 @@
 ---
 ## what's promise
 ---
-promise是异步解决方案
+promise是异步解决方案  
 需求:设定一个函数，在三秒之后打印“promise is great！”
 ```
 let pro = new Promise((resolve, reject) => {
