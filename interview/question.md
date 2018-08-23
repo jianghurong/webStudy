@@ -63,6 +63,7 @@ baz.bar();
 ```js
 var foo = function bar() {};
 console.log(typeof bar);
+```
 
 ---
 6.
