@@ -28,7 +28,7 @@ console.log(typeof bar())
 因为最终定义foo是一个函数，所以return foo之后bar()仍是一个函数
 
 ---
-3.考察对this作用域指向的理解，答案为2,3
+3.考察对this作用域指向的理解，答案为2,3  
 this作用域根据执行环境来确定，bay函数执行时的作用域是全局，所以这里取到的x值为2    
 在foo.baz.bar()中，this指向的事foo.baz作用域，所以取到的x值为3
 
