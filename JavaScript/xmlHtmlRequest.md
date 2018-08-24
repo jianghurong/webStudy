@@ -38,6 +38,7 @@ xhr.onreadystate = () => {
 ---
 ## ReadyState
 readyState返回XHR代理当前所处的状态，以下是readyState可能所处的状态
+
 |值|状态|描述|
 |:---:|:---:|:---:|
 |0|UNSENT|**代理已经创建，尚未发送请求**|
