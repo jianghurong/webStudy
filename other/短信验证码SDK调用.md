@@ -23,9 +23,9 @@ let QcloudSms = require("qcloudsms_js");
 //短信SDK AppID
 let appid = "*****";
 //短信应用SDK Appkey
-let appkey = ""*****";";
+let appkey = "*****";
 //需要发送短信的手机号码
-let phoneNumbers = [""*****";"];
+let phoneNumbers = ["*****"];
 //短信模板ID
 let templateId = *****;
 
