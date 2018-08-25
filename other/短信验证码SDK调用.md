@@ -46,17 +46,20 @@ function callback(err, res, resData) {
     }
 }
 
-//单发短信通知
+// # 单发短信通知
 var ssender = qcloudsms.SmsSingleSender();
 var params = [];//数组具体的元素个数和模板中变量个数必须一致，例如事例中templateId:****对应一个变量，参数数组中元素个数也必须是一个
 ssender.sendWithParam(86, phoneNumbers[0], templateId,
 params, smsSign, "", "", callback);  // 签名参数未提供或者为空时，会使用默认签名发送短信
+
+
+// # 拉取短信状态信息
 var beginTime = 1535119282;  // 开始时间(unix timestamp)
 var endTime = 1535123422;    // 结束时间(unix timestamp)
 var maxNum = 10;             // 单次拉取最大量
 var mspuller = qcloudsms.SmsMobileStatusPuller();
 // 拉取短信回执
-// mspuller.pullCallback("86", phoneNumbers[0], beginTime, endTime, maxNum, callback);
+mspuller.pullCallback("86", phoneNumbers[0], beginTime, endTime, maxNum, callback);
 // 拉取回复
 mspuller.pullReply("86", phoneNumbers[0], beginTime, endTime, maxNum, callback);
 ```
