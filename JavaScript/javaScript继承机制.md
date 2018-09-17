@@ -37,4 +37,59 @@ javaScript还提供了instanceof运算符,验证原型对象与实例对象的�
 alert(dogA instanceof Dog); // true
 alert(dogA instanceof Function); // true
 ```
-
+---
+- isPrototypeOf()  
+用来判断某个prototype对象和某个实例之间的关系  
+```js
+alert(Dog.prototype.isPrototypeOf(dogA));
+```
+- hasOwnProperty(),用来判断是本地属性,还是继承自prototype对象的属性  
+```js
+alert(dogA.hasOwnProperty("name")); // true
+alert(dogB.hasOwnProperty("species")); // false
+```
+- in 运算符用来判断,某个实例是否含有某个属性,不管是不是本地属性  
+```js
+alert("name" in dogA); // true
+alert("species" in dogB); // true
+``` 
+in 运算符还可以用来判断,某个实例是否含有某个属性,不管是不是本地属性  
+```js
+for(let prop in dogA) {
+    alert(dogA[prop]);
+}
+```
+---
+## 构造函数的继承  
+比如有一个"动物"对象的构造函数  
+```js
+function Animal() {
+    this.species = "动物";
+}
+```
+还有一个"猫"对象的构造函数  
+```js
+function Cat(name, color) {
+    this.name = name;
+    this.color = color;
+}
+```
+那么怎么使"猫"继承自"动物"  
+- 构造函数绑定,使用call或apply方法,将父对象的构造函数绑定在子对象上,即在子对象构造函数中加一行 
+```js
+function Cat(name, color) {
+    Animal.apply(this, arguments);
+    this.name = name;
+    this.color = color;
+}
+let Cat1 = new Cat("大猫", "棕色");
+alert(Cat1.species); // 动物
+```
+- prototype模式  
+如果"猫"的prototype对象,指向一个Animal的实例,那么所有"猫"的实例,就能继承自Animal  
+```js
+Cat.prototype = new Animal();
+Cat.prototype.constructor = Cat;
+let Cat1 = new Cat("大狗", "黑色");
+alert(Cat1.species); // 动物
+```
