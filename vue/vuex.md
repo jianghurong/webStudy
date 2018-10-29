@@ -85,3 +85,37 @@ example
 
 </html>
 ```
+
+---
+## state
+单一状态树
+vuex使用**单一状态树**，用一个对象就包含了全部的应用层级别状态。也就说明每一个应用仅仅包含一个store实例。
+
+在vue组件中获得vuex状态
+vuex的状态存储是响应式的,从store实例中读取状态最简单的方法就是在**计算属性**中返回某个状态
+
+---
+## 项目结构  
+Vuex规则：
+- 应用层级的状态应该集中到单个store对象中
+- 提交mutation是更改状态的唯一办法,并且这个过程是同步的
+- 异步逻辑都应该封装到action里面
+
+---
+## 严格模式
+开启严格模式,仅需在创建store的时候传入**strict: true**
+```js
+const store = new Vuex.Store({
+    // ...
+    strict: true
+})
+```
+在严格模式下，无论何时发生了状态变更且不是由mutation函数引起的，将会抛出错误。  
+**不要在发布环境下启用严格模式**  
+严格模式会深度检测状态树来检测不合规的状态变更,请确保在发布环境下关闭严格模式,以避免性能损失。
+```js
+const store = new Vuex.store({
+    // ...
+    strict: process.env.NODE_ENV !== "production"
+})
+```
