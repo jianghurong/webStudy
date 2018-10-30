@@ -119,3 +119,41 @@ const store = new Vuex.store({
     strict: process.env.NODE_ENV !== "production"
 })
 ```
+
+---
+## Mutation
+提交载荷(payload)  
+你可以向store.commit传入额外的参数,即mutation的载荷(payload)  
+```js
+mutations: {
+    increment (state, n) {
+        state.count += n;
+    }
+}
+```
+```js
+store.commit("increment", 8);
+```
+
+---
+## Action
+Action类似于Mutation,不同点在于  
+- Action提交的是Mutation,而不是直接变更状态
+- Action可以包含任意异步操作  
+```js
+const store = new Vuex.Store({
+    state: {
+        count: 0
+    },
+    mutations: {
+        increment (state) {
+            state.count++;
+        }
+    },
+    actions: {
+        increment (content) {
+            context.commit("increment");
+        }
+    }
+})
+```
