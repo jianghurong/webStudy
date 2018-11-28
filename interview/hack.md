@@ -40,3 +40,11 @@ img {
     display: inline-block;
 }
 ```
+
+---
+## IE6~8不支持alpha透明度问题
+可以使用IE滤镜处理
+filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#88000000,endColorstr=#88000000);
+```js
+startColorstr| endColorstr = #AARRGGBB; // 其中AA是代表不透明度的十六进制，00完全透明，FF就是全不透明，化成十进制的范围就是0~255，剩下的就是RRGGBB的十六进制代码
+```
