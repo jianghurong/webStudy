@@ -46,5 +46,5 @@ delayed().then((res) => {
   console.log(err);
 })
 ```
-promise一般用在网络异步请求时，没有等到数据返回就开始执行下一步。有了promise，把网络请求后的操作放在then方法中，把错误放在catch方法中。
+promise一般用在**网络异步请求时**，没有等到数据返回就开始执行下一步。有了promise，把网络请求后的操作放在then方法中，把错误放在catch方法中。
 
