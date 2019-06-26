@@ -17,3 +17,16 @@ Vue.js
 ```js
 pm2 npm -- run serve
 ```
+Process list
+```js
+pm2 ls
+```
+Delete list
+```js
+pm2 delete name
+```
+logs
+```js
+pm2 logs name
+```
+
