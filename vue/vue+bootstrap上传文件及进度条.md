@@ -31,6 +31,7 @@ let app = new Vue({
       let file = e.target.files[0];
       let param = new FormData();
       param.append("file", file); // 通过append方法向param对象添加文件
+      // 打印file信息 console.log(param.get(file"));
       let config = {
           headers: { "Content-Type": "multipart/form-data" },
           // webdev允许全部谓词
