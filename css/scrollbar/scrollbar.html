@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    main section {
+      display: inline-block;
+      margin-left: 50px;
+    }
+    ul {
+      width: 200px;
+      max-height: 150px;
+      overflow: auto;
+    }
+    /*滚动条样式-背景 要设置width和height 应用在x和y轴上的滚动条*/
+    .scrollbar ul::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+      background: #ccc;
+      border-radius: 20px;
+    }
+    /*滚动条滑动模块样式*/
+    .scrollbar ul::-webkit-scrollbar-thumb {
+      background: lightcoral;
+      border-radius: 20px;
+    }
+
+    /*滚动条上的按钮样式-上下键*/
+    /* ul::-webkit-scrollbar-button {
+      background: gray;
+    } */
+    /*滚动条轨道(与scrollbar-button配合显示出效果)*/
+    /* ul::-webkit-scrollbar-track {
+      background: lightblue;
+    } */
+    /*滚动条没有滑块的轨道部分.*/
+    /* ul::-webkit-scrollbar-track-piece {
+      background: limegreen;
+    } */
+    /*垂直滚动条和水平滚动条的交界处*/
+    /* ul::-webkit-scrollbar-corner {
+      display: none;
+    } */
+    /*不常用-某些元素的corner部分的部分样式(例:textarea的可拖动按钮)*/
+    /* ul::-webkit-resizer {
+      background: gold;
+    } */
+  </style>
+</head>
+<body>
+  <header>
+    <h2>SCROLLBAR</h2>
+  </header>
+  <main>
+      <section>
+          <header>
+            <h3>CSS滚动条优化前</h3>
+          </header>
+          <div>
+              <ul>
+                <li>
+                  <p>LIKE ME</p>
+                </li>
+                <li>
+                  <p>LIKE ME</p>
+                </li>
+                <li>
+                  <p>LIKE ME</p>
+                </li>
+                <li>
+                  <p>LIKE ME</p>
+                </li>
+                <li>
+                  <p>LIKE ME</p>
+                </li>
+                <li>
+                  <p>LIKE ME</p>
+                </li>
+              </ul>
+          </div>
+        </section>
+    <section>
+      <header>
+        <h3>CSS滚动条优化后</h3>
+      </header>
+      <div class="scrollbar">
+          <ul>
+            <li>
+              <p>LIKE ME</p>
+            </li>
+            <li>
+              <p>LIKE ME</p>
+            </li>
+            <li>
+              <p>LIKE ME</p>
+            </li>
+            <li>
+              <p>LIKE ME</p>
+            </li>
+            <li>
+              <p>LIKE ME</p>
+            </li>
+            <li>
+              <p>LIKE ME</p>
+            </li>
+          </ul>
+        </div>
+    </section>
+  </main>
+</body>
+</html>
