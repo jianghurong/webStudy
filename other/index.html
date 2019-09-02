@@ -1,0 +1,35 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-09-02 16:40:17
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-09-02 17:35:02
+ * @Description:  
+ * @Email: 19875991227@163.com
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+var capitalize = cached(function (str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+})
+function cached (fn) {
+    var cache = Object.create(null);
+    return (function cachedFn (str) {
+        var hit = cache[str];
+        console.log(hit);
+        return hit || (cache[str] = fn(str));
+    })
+}
+capitalize('richard');
+capitalize('ok');
+capitalize('richard');
+  </script>
+</body>
+</html>
