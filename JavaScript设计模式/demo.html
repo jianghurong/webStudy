@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片预加载</title>
+</head>
+<body>
+  <script>
+    let myImage = (function() {
+      let imgNode = document.createElement('img')
+      document.body.append(imgNode)
+
+      return function(src) {
+          imgNode.src = src
+      }
+    })()
+
+    //　代理对象
+    let proxyImage = (function() {
+      let img = new Image
+      img.onload = function() {
+        myImage(this.src)
+      }
+      return function(src) {
+          myImage('file:// /C:/Users/win 10/Desktop/project/web/webStudy/JavaScript设计模式/loading.gif')
+          img.src = src
+        }
+    })()
+
+    proxyImage('https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1582819321&di=5f4627c48f17fca7ba783d8ede328c95&src=http://cdn.duitang.com/uploads/item/201507/21/20150721085716_K8JQs.jpeg')
+  </script>
+</body>
+</html>
