@@ -9,7 +9,7 @@ var successBool = window.navigator.vibrate(pattern); // pattern - 表示震动�
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate
 if (navigator.vibrate) {
   navigator.vibrate(1000)
-  navigator.vibrate([1000, 2000, 1000, 3000]) // 先震动1s，暂停2s，再震动1s，再震动3s
+  navigator.vibrate([1000, 2000, 1000, 3000]) // 先震动1s，暂停2s，暂停1s，再震动3s
 }
 ```
 兼容性：[Can I use](https://caniuse.com/#search=vibrate)
