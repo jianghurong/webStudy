@@ -213,7 +213,6 @@
           : fn.call(ctx, a)
         : fn.call(ctx)
     }
-
     boundFn._length = fn.length;
     return boundFn
   }
@@ -530,7 +529,6 @@
   // can we use __proto__?
   var hasProto = '__proto__' in {};
 
-  // reading tag
   // Browser environment sniffing 浏览器环境识别
   var inBrowser = typeof window !== 'undefined';
   var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
@@ -617,6 +615,8 @@
   }
 
   /*  */
+
+  // reading tag
 
   var warn = noop;
   var tip = noop;
