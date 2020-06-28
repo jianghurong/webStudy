@@ -283,8 +283,6 @@
    */
   var identity = function (_) { return _; };
 
-  // reading tag
-
   /**
    * Generate a string containing static keys from compiler modules.
    */
@@ -502,6 +500,7 @@
   function def (obj, key, val, enumerable) {
     Object.defineProperty(obj, key, {
       value: val,
+      // !!enumerable 当值是undefined或者是null时 enumerable为false
       enumerable: !!enumerable,
       writable: true,
       configurable: true
@@ -531,7 +530,8 @@
   // can we use __proto__?
   var hasProto = '__proto__' in {};
 
-  // Browser environment sniffing
+  // reading tag
+  // Browser environment sniffing 浏览器环境识别
   var inBrowser = typeof window !== 'undefined';
   var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
   var weexPlatform = inWeex && WXEnvironment.platform.toLowerCase();
