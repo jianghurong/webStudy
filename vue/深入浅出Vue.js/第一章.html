@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  let obj = {
+    name: 'answer',
+    age: 25
+  }
+  defineReactive(obj, 'age', 15)
+  console.log(obj)
+  function defineReactive(data, key, val) {
+    let dep = [] // 依赖收集
+    Object.defineProperty(data, key, {
+      enumerable: true, // 为true时，该属性出现在对象的枚举属性中
+      configurable: true, // 为true时，该属性的描述符可以被改变，同时该属性可以被删除
+      get: function() {
+        dep.push(window.target)
+        return val
+      },
+      set: function(newVal) {
+        if (val === newVal) return
+        for (let  i = 0; i < dep.length; i++) {
+          dep[i](newVal, val)
+        }
+        val = new Val
+      }
+    })
+    console.log(dep)
+  }
+  </script>
+</body>
+</html>
