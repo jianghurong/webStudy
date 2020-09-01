@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3 variables</title>
+    <style>
+      :root {
+        --primary-color: red;
+        --primary-padding: 0 10px;
+      }
+      .paragraph {
+        color: var(--primary-color);
+        padding: var(--primary-padding);
+      }
+      p {
+        padding: var(--primary-padding);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="paragraph">
+      This is a paragraph
+    </p>
+    <p>css3 code:</p>
+    <pre>
+      :root {
+        --primary-color: red;
+        --primary-padding: 10px;
+      }
+      p {
+        color: var(--primary-color);
+        padding: var(--primary-padding);
+      }
+    </pre>
+  </body>
+</html>
