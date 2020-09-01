@@ -3,7 +3,7 @@ install
 npm install -g yarn
 ```
 
-tips  
+tips
 
 ...,因为在此系统上禁止运行该脚本
 ```
