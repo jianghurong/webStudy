@@ -6,3 +6,13 @@ git push // 更新项目
 git reset HEAD . // 撤销 git add . 操作
 git reset --hard HEAD^ // 回退到上一次commit状态
 ```
+
+## 已有项目上传至github
+```js
+1. github 新建仓库
+2. git add .
+3. git commit -m "note"
+4. git remote rm origin // required
+5. git remove add origin
+6. git push -u origin master
+```
