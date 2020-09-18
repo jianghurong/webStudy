@@ -12,7 +12,7 @@ git reset --hard HEAD^ // 回退到上一次commit状态
 1. github 新建仓库
 2. git add .
 3. git commit -m "note"
-4. git remote rm origin // required
-5. git remove add origin
+4.    // required
+5. git remote add origin
 6. git push -u origin master
 ```
