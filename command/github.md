@@ -13,6 +13,9 @@ git reset --hard HEAD^ // 回退到上一次commit状态
 2. git add .
 3. git commit -m "note"
 4.    // required
-5. git remote add origin
-6. git push -u origin master
+5. git remote add origin https://xx.git
+6. git push -u origin master // -f
 ```
+
+## .gitignore 新增文件
+git rm -r --cached .
