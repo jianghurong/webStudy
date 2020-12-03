@@ -1,0 +1,36 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-10 10:23:28
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-11 18:02:23
+ * @Description: 
+ * @Email: 19875991227@163.com
+ -->
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8">
+     <title>1010</title>
+   </head>
+   <body>
+     <script>
+      /**
+      * @param {number[]} time
+      * @return {number}
+      */
+      var numPairsDivisibleBy60 = function(time) {
+        var total = 0 // 存储可被60整除的的数值对
+        for (var i = 0; i < time.length; i++) {
+            for (var j = i + 1; j < time.length; j++) {
+            if ((time[i] + time[j]) % 60 === 0) {
+                total += 1
+            }
+            }
+        }
+        return total
+        ;
+      var time = [30,20,150,100,40]
+      console.log(numPairsDivisibleBy60(time))
+     </script>
+   </body>
+ </html>

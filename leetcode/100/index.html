@@ -1,0 +1,38 @@
+<!--
+  * @Author: Richard Chiang
+  * @Date: 2019-12-10 10:23:28
+  * @LastEditrors: Richard Chiang
+ * @LastEditTime : 2019-12-18 11:06:07
+  * @Description: 
+  * @Email: 19875991227@163.com
+  -->
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>100</title>
+    </head>
+    <body>
+      <script>
+        /**
+        * Definition for a binary tree node.
+        * function TreeNode(val) {
+        *     this.val = val;
+        *     this.left = this.right = null;
+        * }
+        */
+        /**
+        * @param {TreeNode} p
+        * @param {TreeNode} q
+        * @return {boolean}
+        */
+        var isSameTree = function(p, q) {
+          if (p == null && q == null) return true
+          if (p == null || q == null) return false
+          if (p.val == q.val) {
+            return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
+          } else return false
+        };
+      </script>
+    </body>
+  </html>

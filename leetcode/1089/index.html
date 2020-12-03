@@ -1,0 +1,36 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-10 10:23:28
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-13 11:28:38
+ * @Description: 
+ * @Email: 19875991227@163.com
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>1089</title>
+  </head>
+  <body>
+    <script>
+      /**
+      * @param {number[]} arr
+      * @return {void} Do not return anything, modify arr in-place instead.
+      */
+      var arr = [1,0,2,3,0,4,5,0]
+      var duplicateZeros = function(arr) {
+        var initLength = arr.length
+        var newArr = JSON.parse(JSON.stringify(arr))
+        var index = 0
+        for (var i = 0; i < initLength; i++) {
+          if (newArr[i] === 0) {
+            arr.splice(i + index++, 0, 0)
+          }
+        }
+        arr.splice(initLength, arr.length - initLength)
+      }
+      console.log(duplicateZeros(arr))
+    </script>
+  </body>
+</html>

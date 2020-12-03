@@ -1,0 +1,42 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-06 14:22:03
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-09 10:42:19
+ * @Description: 
+ * @Email: 19875991227@163.com
+ -->
+ <!DOCTYPE html>
+ <html>
+   <meta charset="utf-8">
+   <head>
+     <title>27</title>
+     <body>
+       <script>
+        // nums = [0,1,2,2,3,0,4,2], val = 2,
+        // 双指针 慢指针-i 快指针-j j!=val j=i(j+1, i + 1), j===val j+1
+        /**
+        * @param {number[]} nums
+        * @param {number} val
+        * @return {number}
+        */
+        var nums = [0,1,2,2,3,0,4,2], val = 2
+        var removeElement = function(nums, val) {
+          let i = 0, j = 0
+          let length = nums.length
+          for (j; j < length; j++) {
+            if (nums[j] !== val) {
+              nums[i] = nums[j]
+              i++
+            }
+            // all done
+            if (j === length - 1) {
+              return i
+            }
+          }
+        };
+        removeElement(nums, val)
+       </script>
+     </body>
+   </head>
+ </html>

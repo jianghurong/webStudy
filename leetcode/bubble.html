@@ -1,0 +1,31 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-10-10 09:34:21
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-10-10 09:53:39
+ * @Description:  
+ * @Email: 19875991227@163.com
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>冒泡排序</title>
+  </head>
+  <body>
+    <script>
+      let arr = [3, 6, 9, 1, 5];
+      let l = arr.length;
+
+      for (let i = 0; i < l - 1; i++) {
+        for (let j = i + 1; j < l; j++) {
+          if (arr[i] > arr[j]) {
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+          }
+        }
+      }
+      console.log(arr);
+    </script>
+  </body>
+</html>

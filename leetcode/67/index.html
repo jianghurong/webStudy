@@ -1,0 +1,87 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-06 14:22:03
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-17 10:02:34
+ * @Description: 
+ * @Email: 19875991227@163.com
+ -->
+ <!DOCTYPE html>
+ <html>
+   <meta charset="utf-8">
+   <head>
+     <title>67</title>
+     <body>
+       <script>
+         /*
+         给定两个二进制字符串，返回他们的和（用二进制表示）。
+
+          输入为非空字符串且只包含数字 1 和 0。
+
+          示例 1:
+
+          输入: a = "11", b = "1"
+          输出: "100"
+          示例 2:
+
+          输入: a = "1010", b = "1011"
+          输出: "10101"
+         */
+
+        /**
+        * @param {string} a
+        * @param {string} b
+        * @return {string}
+        */
+        var a = '1001', b = '101' 
+        // 9 + 11 20 10100
+        // var addBinary = function(a, b) {
+        //   let flag = false
+        //   let ans = new String()
+        //   while (a.length !== b.length) {
+        //     if (a.length > b.length) {
+        //       b = b.split('')
+        //       b.unshift('0')
+        //       b = b.join('')
+        //     } else {
+        //       a = a.split('')
+        //       a.unshift('0')
+        //       a = a.join('')
+        //     }
+        //   }
+        //   for(let i = a.length - 1; i >= 0; i--) {
+        //     if (a[i] + b[i] === '11') {
+        //       if (flag) {
+        //         ans += '1'
+        //         flag = true
+        //       } 
+        //       else {
+        //         ans += '0'
+        //         flag = true
+        //       }
+        //     } else if (a[i] + b[i] === '01' || a[i] + b[i] === '10') {
+        //       if (flag) {
+        //         ans += '0'
+        //         flag = true
+        //       } else {
+        //         ans += '1'
+        //         flag = false
+        //       }
+        //     } else {
+        //       if (flag) {
+        //         ans += '1'
+        //       } else {
+        //         ans += '0'
+        //       }
+        //       flag = false
+        //     }
+        //   }
+        //   if (flag) ans += '1'
+        //   ans = ans.split('').reverse().join('')
+        //   return ans
+        // };
+        console.log(addBinary(a, b))
+       </script>
+     </body>
+   </head>
+ </html>

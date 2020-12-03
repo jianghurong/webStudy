@@ -1,0 +1,61 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-10-09 15:48:58
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-10 18:10:07
+ * @Description:  
+ * @Email: 19875991227@163.com
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1094</title>
+  </head>
+  <body>
+    <script>
+      /*
+      1.首先计算trips是否大于最大容量capacity，如果大于返回false
+      2.其次储存车的实时容量，如果实时容量大于capacity则也返回false，
+      实时容量为trips[i] + 已在车上乘客
+      3.车的实时容量需要根据trips[i]来判断是否有乘客是否下车
+      */
+      var carPooling = function(trips, capacity) {
+        let current_capacity = 0;
+        let list = trips; // 未完成的行程数组
+
+        for (let i = 0; i < trips.length; i++) {
+                  
+          // 最简单情况，trips[i][1]大于最大容量，直接返回false
+          if (trips[i][0] > capacity) {
+            return false;
+          }
+        }
+
+        // 根据start_location重新排序
+        trips = trips.sort(function(a, b) {
+          return a[1] - b[1];
+        });
+
+        // 计算实时容量
+        for (let i = 0; i < trips.length; i++) {
+          
+          let now_capacity = trips[i][0];
+          if (i > 0) {
+            // 如果当前开始位置大于等于上一次开始位置，则实时容量减掉上次容量
+            for (let j = 0; j < list.length; j++) {
+              if (trips[i][1] >= list[j][2] && trips[i] !== list[j]) {
+                delete list[j];
+              }
+            }
+          }
+          current_capacity += now_capacity;
+          if (current_capacity > capacity) {
+            return false;
+          }
+        }
+        return true;
+      };
+      console.log(carPooling([[3,2,7],[3,7,9],[8,3,9]], 11));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-06 14:22:03
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-09 12:10:18
+ * @Description: 
+ * @Email: 19875991227@163.com
+ -->
+ <!DOCTYPE html>
+ <html>
+   <meta charset="utf-8">
+   <head>
+     <title>217</title>
+     <body>
+       <script>
+      /**
+      * @param {number[]} nums
+      * @return {boolean}
+      */
+      var containsDuplicate = function(nums) {
+          var newNums = Array.from(new Set(nums))
+          // var newNums = [...new Set(nums)]
+          return nums.length !== newNums.length
+      };
+       </script>
+     </body>
+   </head>
+ </html>

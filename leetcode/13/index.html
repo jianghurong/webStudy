@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>罗马数字转整数</title>
+  </head>
+  <body>
+    <script>
+      var romanToInt = function(s) {
+      let num = new Number()
+      for (let i = 0; i < s.length; i++) {
+          switch(s[i]) {
+              case 'M': num += 1000; break;
+              case 'D': num += 500; break;
+              case 'L': num += 50; break;
+              case 'V': num += 5; break;
+              case 'C': 
+                  if (s[i + 1] === 'D') {
+                      num += 400
+                      i++
+                  } else if (s[i + 1] === 'M') {
+                      num += 900
+                      i++
+                  } else {
+                      num += 100
+                  }
+                  break;
+              case 'X':
+                  if (s[i + 1] === 'L') {
+                      num += 40
+                      i++
+                  } else if (s[i + 1] === 'C') {
+                      num += 90
+                      i++
+                  } else {
+                      num += 10
+                  }
+                  break;
+              case 'I':
+                  if (s[i + 1] === 'V') {
+                      num += 4
+                      i++
+                  } else if (s[i + 1] === 'X') {
+                      num += 9
+                      i++
+                  } else {
+                      num += 1
+                  }
+                  break;
+          }
+      }
+      return num
+    };
+    </script>
+  </body>
+</html>

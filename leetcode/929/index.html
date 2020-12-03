@@ -1,0 +1,86 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-06 11:12:43
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-06 14:09:49
+ * @Description: 
+ * @Email: 19875991227@163.com
+ -->
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <title>929</title>
+   </head>
+   <body>
+     <script>
+      /*
+        电子邮件由两部分组件，本地名称和域名，以@符号分隔  1739950980@qq.com
+        除了小写字母,这些电子邮件可能还包含'.'和'+',如果在电子邮件的本地名称部分中的某些字母之间添加
+        句点('.'),则发往那里的邮件将会转发到本地名称中没有点的同一地址，如17399509.0@qq.com和1739950980@qq.com转发到同一地址（此规则不适用于域名）
+        如果本地名称中添加加号+，则会忽略第一个+号后面内容，m.y+name@email.com将转发到my@email.com(不适用于域名)
+      */
+      /*
+        最简单的forEach
+        let emails = []
+        let count = 0
+        emails.forEach(ele => {
+        })
+      */
+      // let strList = [
+      //   '1.2.3+name+3@qq.com',
+      //   '+a.2@qq.com',
+      //   '12.3@qq.com'
+      // ]
+      // function abc(str) {
+      //   let regexp1 = /@/gi
+      //   let index = str.search(regexp1)
+      //   let local = str.slice(0, index)
+      //   let end = str.slice(index)
+      //   let regexp2 = /\+/gi
+      //   let index2 = local.search(regexp2)
+      //   let local2 = local
+      //   if (index2 !== -1) {
+      //     local2 = local.slice(0, index2)
+      //   }
+      //   let regexp3 = /\./gi
+      //   result = local2.replace(regexp3, '') + end
+      //   return result
+      // }
+      // function ok(list) {
+      //   let newList = list.map(element => {
+      //     return abc(element)
+      //   })
+      //   let num = Array.from(new Set(newList)).length
+      //   return num
+      // }
+      // ok(strList)
+      /**
+      * @param {string[]} emails
+      * @return {number}
+      */
+      var numUniqueEmails = function(emails) {
+          function reduce(str) {
+              let regexp1 = /@/gi
+              let index = str.search(regexp1)
+              let local = str.slice(0, index)
+              let end = str.slice(index)
+              let regexp2 = /\+/gi
+              let index2 = local.search(regexp2)
+              let local2 = local
+              if (index2 !== -1) {
+                  local2 = local.slice(0, index2)
+              }
+              let regexp3 = /\./gi
+              result = local2.replace(regexp3, '') + end
+              return result
+          }
+          let newList = emails.map(element => {
+              return reduce(element)
+          })
+          let num = Array.from(new Set(newList)).length
+          return num
+      };
+     </script>
+   </body>
+ </html>
+ 

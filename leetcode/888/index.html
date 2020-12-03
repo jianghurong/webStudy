@@ -1,0 +1,65 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-09 14:22:33
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-09 15:22:11
+ * @Description: 
+ * @Email: 19875991227@163.com
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>888</title>
+    <body>
+      <script>
+      /**
+      * @param {number[]} A
+      * @param {number[]} B
+      * @return {number[]}
+      */
+      var A = [1,1], B = [2,2]
+      var fairCandySwap = function(A, B) {
+        var alength = A.length, blength = B.length
+        var sumA = 0, sumB = 0
+        for (var i of A) {
+          sumA += i
+        }
+        for (var i of B) {
+          sumB += i
+        }
+        for (var i = 0; i < A.length;i++) {
+          for (var j = 0; j < B.length; j++) {
+            if (sumA - A[i] + B[j] === sumB - B[j] + A[i]) {
+              return [A[i], B[j]]
+            }
+          }
+        }
+      }
+      fairCandySwap(A,B)
+
+      // 两种排序方式时间对比 在list的长度大约为100以下时，sum1更快， 为100以上时，sum2更快，数字越大，sum2越快
+      // function foo() {
+      //   var sum = 0
+      //   var list = []
+      //   for (var i = 0; i < 10; i++) {
+      //     list[i] = i
+      //   }
+      //   console.time('sum1')
+      //   for (var i of list) {
+      //     sum += i
+      //   }
+      //   console.timeEnd('sum1')
+
+      //   function getSum(total, num) {
+      //     return total + num
+      //   }
+      //   console.time('sum2')
+      //   sum = list.reduce(getSum)
+      //   console.timeEnd('sum2')
+      // }
+      // foo()
+      </script>
+    </body>
+  </head>
+</html>

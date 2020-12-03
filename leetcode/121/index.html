@@ -1,0 +1,36 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-06 14:22:03
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-09 11:38:15
+ * @Description: 
+ * @Email: 19875991227@163.com
+ -->
+ <!DOCTYPE html>
+ <html>
+   <meta charset="utf-8">
+   <head>
+     <title>121</title>
+     <body>
+       <script>
+        /**
+        * @param {number[]} prices
+        * @return {number}
+        */
+        var maxProfit = function(prices) {
+          var maxProfit = 0, minPrice = Math.max.apply(null, prices)
+          var i = 0
+          var length = prices.length
+          for (i; i < length; i++) {
+            if (prices[i] < minPrice) {
+              minPrice = prices[i]
+            } else if (prices[i] - minPrice > maxProfit) {
+              maxProfit = prices[i] - minPrice
+            }
+          }
+          return maxProfit
+        }
+       </script>
+     </body>
+   </head>
+ </html>

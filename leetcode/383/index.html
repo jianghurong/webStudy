@@ -1,0 +1,56 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-17 15:29:00
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-17 16:08:38
+ * @Description:
+ * @Email: 19875991227@163.com
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>赎金信</title>
+</head>
+<body>
+  <script>
+  /*
+    给定一个赎金信 (ransom) 字符串和一个杂志(magazine)字符串，
+    判断第一个字符串ransom能不能由第二个字符串magazines里面的字符构成。如果可以构成，返回 true ；否则返回 false。
+
+    (题目说明：为了不暴露赎金信字迹，要从杂志上搜索各个需要的字母，组成单词来表达意思。)
+
+    注意：
+
+    你可以假设两个字符串均只含有小写字母。
+
+    canConstruct("a", "b") -> false
+    canConstruct("aa", "ab") -> false
+    canConstruct("aa", "aab") -> true
+
+  */
+
+  /**
+  * @param {string} ransomNote
+  * @param {string} magazine
+  * @return {boolean}
+  */
+  var ransomNote = 'cacbcd'
+  var magazine = 'cacbcd'
+  var canConstruct = function(ransomNote, magazine) {
+    let index = -1
+    magazine = magazine.split('')
+    for(let i = 0; i < ransomNote.length; i++) {
+      index = magazine.indexOf(ransomNote[i])
+      if (index !== -1) {
+        magazine.splice(index, 1)
+      } else return false
+    }
+    return true
+  };
+  console.log(canConstruct(ransomNote, magazine))
+  </script>
+</body>
+</html>
