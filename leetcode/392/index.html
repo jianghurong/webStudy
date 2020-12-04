@@ -2,7 +2,7 @@
  * @Author: Richard Chiang
  * @Date: 2019-12-17 15:29:00
  * @LastEditrors: Richard Chiang
- * @LastEditTime : 2019-12-18 14:08:33
+ * @LastEditTime: 2020-12-03 17:24:06
  * @Description:
  * @Email: 19875991227@163.com
  -->
@@ -45,9 +45,27 @@
     * @param {string} t
     * @return {boolean}
     */
+    let s = "abc",t = "ahbgdc"
     var isSubsequence = function(s, t) {
-      
-    };
+      let sLen = s.length, tLen = t.length;
+        if (sLen > tLen) return false;
+        if (sLen == 0) return true;
+        let dp = Array.from({length:sLen + 1});
+        dp[0] = Array.from({length:tLen + 1},x=>true);
+        console.log(dp[0])
+        for (let i = 1; i <= sLen; i++) {
+            dp[i] = Array.from({length:tLen + 1},x=>false);
+            for (let j = 1; j <= tLen; j++) {
+                if (s[i - 1] == t[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = dp[i][j - 1];
+                }
+            }
+        }
+        return dp[sLen][tLen];
+    }
+    isSubsequence(s, t)
    </script>
  </body>
  </html>
