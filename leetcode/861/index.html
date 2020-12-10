@@ -20,15 +20,57 @@
         // 解释：
         // 转换为 [[1,1,1,1],[1,0,0,1],[1,1,1,1]]
         // 0b1111 + 0b1001 + 0b1111 = 15 + 9 + 15 = 39
+        // 循环每一行，最左边数为0则翻转，然后判断每一列的0,1数，1多不翻转，0多翻转
         /**
         * @param {number[][]} A
         * @return {number}
         */
         var matrixScore = function(A) {
-            
+            let rlen = A.length,
+                clen = A[0].length,
+                sum = 0
+            function reverseRow(arr, i) {
+                for(let j = 0; j < clen; j++) {
+                    arr[i][j] = arr[i][j] === 0 ? 1 : 0
+                }
+                return arr
+            }
+            function reverseCol(arr, j) {
+                for(let i = 0; i < arr.length; i++) {
+                    arr[i][j] = arr[i][j] === 0 ? 1 : 0
+                }
+                return arr
+            }
+            function calcSum(arr) {
+                let sum = 0
+                for (let i = 0; i < clen; i++) {
+                    if (arr[i] === 1) {
+                        sum += Math.pow(2,  clen - i - 1)
+                    }
+                }
+                return sum
+            }
+            for (let i = 0; i < rlen; i++) {
+                if (A[i][0] === 0) {
+                    A = reverseRow(A, i)
+                }
+            }
+            for (let j = 1; j < clen; j++) {
+                let count = 0
+                for (let i = 0; i < rlen; i++) {
+                    count += A[i][j]
+                }
+                if (count < 2) {
+                    A = reverseCol(A, j)
+                }
+            }
+            for (let i = 0; i < rlen; i++) {
+                sum += calcSum(A[i])
+            }
+            return sum
         };
-
-        matrixScore()
+        let A = [[0,0,0],[0,1,0],[0,1,0],[0,1,1],[0,0,0],[1,1,0],[1,0,1],[0,1,0],[0,0,1]]
+        console.log(matrixScore(A))
     </script>
 </body>
 </html>
