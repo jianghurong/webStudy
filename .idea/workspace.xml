@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b41c4c6-af1d-4cec-b875-8ead73e849a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/leetcode/861/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/861/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/impression/aboutLearn.md" beforeDir="false" afterPath="$PROJECT_DIR$/impression/aboutLearn.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +12,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/leetcode/1578/index.html" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1lRoT07qhEmk1PzoWpO9YVHdco9" />
   <component name="ProjectViewState">
@@ -22,6 +26,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -32,7 +38,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607569268968</updated>
-      <workItem from="1607569270384" duration="3246000" />
+      <workItem from="1607569270384" duration="4963000" />
+      <workItem from="1607586861865" duration="8057000" />
+      <workItem from="1607649141176" duration="1408000" />
+      <workItem from="1607651920412" duration="2530000" />
+      <workItem from="1607655836909" duration="257000" />
+      <workItem from="1607656137812" duration="2397000" />
+      <workItem from="1607677917585" duration="2967000" />
+      <workItem from="1607910629051" duration="527000" />
+      <workItem from="1607911171474" duration="12554000" />
+      <workItem from="1607995217491" duration="5586000" />
     </task>
     <servers />
   </component>

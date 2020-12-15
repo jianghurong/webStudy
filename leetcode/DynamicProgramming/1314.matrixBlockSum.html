@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <body>
+        <script>
+            /*
+            * 给你一个 m * n的矩阵 mat 和一个整数 K ，请你返回一个矩阵answer，
+            * 其中每个answer[i][j]是所有满足下述条件的元素mat[r][c] 的和：
+                i - K <= r <= i + K, j - K <= c <= j + K
+                (r, c)在矩阵内。
+                示例 1：
+                输入：mat = [[1,2,3],[4,5,6],[7,8,9]], K = 1
+                输出：[[12,21,16],[27,45,33],[24,39,28]]
+                示例 2：
+                输入：mat = [[1,2,3],[4,5,6],[7,8,9]], K = 2
+                输出：[[45,45,45],[45,45,45],[45,45,45]]
+                提示：
+                m == mat.length
+                n == mat[i].length
+                1 <= m, n, K <= 100
+                1 <= mat[i][j] <= 100
+            * */
+            /*
+            * i = 0, j = 0, k = 1
+            * -1 <= r < = 1, -1 <= c <= 1 结果是mat[-1][-1] mat[-1][0] mat[-1][1] mat[0][-1] mat[0][0] mat[0][1] mat[1][-1] mat[1][0] mat[1][1]
+            * i = 0, j = 1, k = 1
+            * -1 <= r <= 1, 0 <= c <= 2 结果是mat[-1][0] mat[-1][1] mat[-1][2]  mat[0][0] mat[0][1] mat[0][2] mat[1][0] mat[1][1] mat[1][2]
+            * i = 1, j = 0, k = 1
+            * 0 <= r <= 2, -1 <= c <= 1 结果是mat[0][-1] mat[0][0] mat[0][1] mat[1][-1] mat[1][0] mat[1][1] mat[2][-1] mat[2][0] mat[2][1]
+            * */
+            /**
+             * @param {number[][]} mat
+             * @param {number} K
+             * @return {number[][]}
+             */
+            var matrixBlockSum = function(mat, K) {
+                let rows = mat.length
+                let cols = mat[0].length
+                if(rows === 0 || cols === 0) return []
+                let answer = new Array(rows).fill(0).map(x => new Array(cols).fill(0))
+                let dp = Array.from(
+                    { length: rows + 1 },
+                    () => Array.from(
+                        { length: cols + 1 }
+                    ).fill(0)
+                )
+                for (let i = 1; i <= rows; i++) {
+                    for (let j = 1; j <= cols; j++) {
+                        dp[i][j] = mat[i - 1][j - 1] + dp[i][j - 1] + dp[i - 1][j] - dp[i - 1][j - 1]
+                    }
+                }
+                for (let i = 1; i <= rows; i++) {
+                    for (let j = 1; j <= cols; j++) {
+                        let x0 = Math.max(i - K -1, 0)
+                        let x1 = Math.min(i + K, rows)
+                        let y0 = Math.max(j - K - 1, 0)
+                        let y1 = Math.min(j + K, cols)
+                        answer[i - 1][j - 1] = dp[x1][y1] - dp[x1][y0] - dp[x0][y1] + dp[x0][y0]
+                    }
+                }
+                return answer
+            };
+            matrixBlockSum([[1,2,3],[4,5,6],[7,8,9]], 2)
+        </script>
+    </body>
+</html>
