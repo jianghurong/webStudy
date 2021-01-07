@@ -1,0 +1,89 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2020-12-03 14:05:58
+ * @LastEditor: Richard Chiang
+ * @LastEditTime: 2020-12-03 14:50:34
+ * @Email: 19875991227@163.com
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRU缓存</title>
+</head>
+<body>
+    <script>
+        // 设计和构建一个“最近最少使用”缓存，该缓存会删除最近最少使用的项目。缓存应该从键映射到值(允许你插入和检索特定键对应的值)，并在初始化时指定最大容量。当缓存被填满时，它应该删除最近最少使用的项目。
+
+        // 它应该支持以下操作： 获取数据 get 和 写入数据 put 。
+
+        // 获取数据 get(key) - 如果密钥 (key) 存在于缓存中，则获取密钥的值（总是正数），否则返回 -1。
+        // 写入数据 put(key, value) - 如果密钥不存在，则写入其数据值。当缓存容量达到上限时，它应该在写入新数据之前删除最近最少使用的数据值，从而为新的数据值留出空间。
+        /**
+         * @param {number} capacity
+         */
+        var LRUCache = function(capacity) {
+            this.cache = [] // 使用Map结构语义化更强，这里使用数组结构，保证兼容性
+            this.capacity = capacity
+        };
+
+        /** 
+         * @param {number} key
+         * @return {number}
+         */
+        LRUCache.prototype.get = function(key) {
+            let len = this.cache.length
+            for(let i = 0; i < len; i++) {
+                let item = this.cache[i]
+                if (item.key === key) {
+                    // 更新cache，在原有位置删除该数据，将该数据更新到数组末尾
+                    this.cache.splice(i, 1)
+                    this.cache.push(item)
+                    return item.value
+                }
+            }
+            return -1
+        };
+
+        /** 
+         * @param {number} key 
+         * @param {number} value
+         * @return {void}
+         */
+        LRUCache.prototype.put = function(key, value) {
+            let len = this.cache.length
+            for(let i = 0; i < len; i++) {
+                let item = this.cache[i]
+                // key存在cache中
+                if (item.key === key) {
+                // 更新cache，在原有位置删除该数据，将该数据更新到数组末尾
+                    this.cache.splice(i, 1)
+                    this.cache.push({
+                    key: key,
+                    value: value
+                    })
+                    return
+                }
+            }
+            // 如果缓存数超出上限
+            if (len >= this.capacity) {
+                this.cache.shift()
+            }
+            // 加入缓存
+            this.cache.push({
+                key: key,
+                value: value
+            })
+        };
+
+        /**
+         * Your LRUCache object will be instantiated and called as such:
+         * var obj = new LRUCache(capacity)
+         * var param_1 = obj.get(key)
+         * obj.put(key,value)
+         */
+    </script>
+</body>
+</html>

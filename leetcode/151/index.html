@@ -1,0 +1,43 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-10-09 15:06:29
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-10-09 15:26:10
+ * @Description:  
+ * @Email: 19875991227@163.com
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>151</title>
+  </head>
+  <body>
+    <script>
+      /*
+      1. 翻转字符串里的每个单词（是单词，不是字母，每个无空格字符串构成一个单词）
+      2. 如果两个单词之间有多余的空格，则反转后的单词间空格减少到只包含一个
+      3. 输入字符串可以在前面或者后面包含多余的空格，反转后的字符不能包括
+      */
+      var reverseWords = function(s) {
+        let newStr = [];
+
+        // 实现第3点功能
+        s = s.trim();
+
+        // 实现第1点功能
+        let strArr = s.split(' ');
+        for (let i = strArr.length - 1; i >= 0 ; i--) {
+
+          // 实现第2点功能
+          if (strArr[i] !== '') {
+            newStr.push(strArr[i]);
+          }
+        }
+
+        newStr = newStr.join(' ');
+        return newStr;
+      };
+      reverseWords('  hello   world! ');
+    </script>
+  </body>
+</html>

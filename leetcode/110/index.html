@@ -1,0 +1,70 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-18 14:56:16
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime : 2019-12-20 11:00:08
+ * @Description: 
+ * @Email: 19875991227@163.com
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>平衡二叉树</title>
+ </head>
+ <body>
+   <script>
+    // 给定一个二叉树，判断它是否是高度平衡的二叉树
+    // 本题中，一棵高度平衡二叉树定义为：
+
+    // 一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。
+
+    // 示例 1:
+
+    // 给定二叉树 [3,9,20,null,null,15,7]
+
+    //     3
+    //    / \
+    //   9  20
+    //     /  \
+    //    15   7
+    // 返回 true 。
+
+    // 示例 2:
+
+    // 给定二叉树 [1,2,2,3,3,null,null,4,4]
+
+    //        1
+    //       / \
+    //      2   2
+    //     / \
+    //    3   3
+    //   / \
+    //  4   4
+    // 返回 false 。
+
+    /**
+    * @param {TreeNode} root
+    * @return {boolean}
+    */
+    var isBalanced = function(root) {
+      if (root === null) return 0
+      else {
+        let left_height = getHeight(root.left)
+        let right_height = getHeight(root.right)
+      }
+      console.log(left_height, right_height)
+    };
+    var getHeight = function(root) {
+      if (root === null) return 0
+      else {
+        let left_height = getHeight(root.left)
+        let right_height = getHeight(root.right)
+        return Math.max(left.height, right_height) + 1
+      }
+    }
+   </script>
+ </body>
+ </html>

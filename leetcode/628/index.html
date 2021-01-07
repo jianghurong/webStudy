@@ -1,0 +1,47 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-06 14:22:03
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-10 10:24:38
+ * @Description: 
+ * @Email: 19875991227@163.com
+ -->
+ <!DOCTYPE html>
+ <html>
+   <meta charset="utf-8">
+   <head>
+     <title>628</title>
+     <body>
+      <script>
+        /*
+        给定一个整型数组，在数组中找出由三个数 组成的最大乘积，并输出这个乘积。
+
+        示例 1:
+
+        输入: [1,2,3]
+        输出: 6
+        示例 2:
+
+        输入: [1,2,3,4]
+        输出: 24
+        注意:
+
+        给定的整型数组长度范围是[3,104]，数组中所有的元素范围是[-1000, 1000]。
+        输入的数组中任意三个数的乘积不会超出32位有符号整数的范围。
+        /**
+        * @param {number[]} nums
+        * @return {number}
+        */
+      var nums = [-3,-4,2,-1,4]
+      var maximumProduct = function(nums) {
+        var length = nums.length
+        nums = nums.sort((a, b) => {
+          return a - b
+        })
+        return Math.max(nums[0] * nums[1] * nums[length - 1], nums[length - 1] * nums[length - 2] * nums[length - 3])
+      }
+      maximumProduct(nums)
+      </script>
+     </body>
+   </head>
+ </html>

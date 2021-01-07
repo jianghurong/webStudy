@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function TreeNode(val) {
+      this.val = val
+      this.left = this.right = null
+    }
+    function createNode(value) {
+      var node = new TreeNode(value)
+      return node
+    }
+    function addNode(value, node) {
+      if (node.left === null) {
+        node.left = createNode(value)
+        return node.left
+      } else if (node.right === null) {
+        node.right = createNode(value)
+        return node.right
+      } else if (node.left.left === null || node.left.right === null) {
+        return addNode(value, node.left)
+      } else if (node.right.left === null || node.right.left === null) {
+        return addNode(value, node.right)
+      }
+    }
+    let list = [1,2,2,3,null,null,3,4,null,null,4]
+    let root = null
+    for(i = 0; i < list.length; i++) {
+      if (root === null) {
+        root = createNode(list[i])
+      } else {
+        addNode(list[i], root)
+      }
+    }
+    console.log(root)
+  </script>
+</body>
+</html>

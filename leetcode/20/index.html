@@ -1,0 +1,41 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2019-12-16 14:34:32
+ * @LastEditrors: Richard Chiang
+ * @LastEditTime: 2019-12-17 10:03:17
+ * @Description: 
+ * @Email: 19875991227@163.com
+ -->
+ <!DOCTYPE html>
+ <html>
+   <head lang="en">
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>有效的括号</title>
+   </head>
+   <body>
+     <script>
+      /**
+      * @param {string} s
+      * @return {boolean}
+      */
+      var isValid = function(s) {
+          if (s === '') return true
+          let stack = new Array()
+          let ans = true
+          for(let i = 0; i < s.length; i++) {
+              if (s[i] === '{' || s[i] === '[' || s[i] === "(") {
+                  stack.unshift(s[i])
+              } else {
+                  if (stack[0] === '{' && s[i] === '}') stack.shift()
+                  else if (stack[0] === '[' && s[i] === ']') stack.shift()
+                  else if (stack[0] === '(' && s[i] === ')') stack.shift()
+                  else ans = false
+              }
+          }
+          return stack.length === 0 && ans
+      };
+     </script>
+   </body>
+ </html>
