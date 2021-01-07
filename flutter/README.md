@@ -19,3 +19,11 @@ tips: 此镜像为临时镜像，最新镜像地址-[Using Flutter in China](htt
     用户变量中追加flutter\bin的全路径，然后以;为分隔符
     flutter文件夹中执行git init命令
     flutter doctor
+4. build.gradle
+```js
+// google()
+// jcenter()
+maven { url 'https://maven.aliyun.com/repository/google' }
+maven { url 'https://maven.aliyun.com/repository/jcenter' }
+maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+```
