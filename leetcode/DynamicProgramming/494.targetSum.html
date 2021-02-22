@@ -34,12 +34,17 @@
              * @return {number}
              */
             var findTargetSumWays = function(nums, S) {
-                // 每一步有两个选择,加一或减一 sum(n)表示到第n项的和
-                // 1.sum(n) = sum(n - 1) + n
-                // 2.sum(n) = sum(n - 1) - n
+                // 每一步有两个选择,加一或减一
                 let len = nums.length
-                for (let i = 0; i < len; i++) {
-
+                let dp = Array.from({ length: len }, () => new Array(2).fill(0))
+                dp[0][0] = nums[0]
+                dp[0][1] = -nums[0]
+                for (let i = 0 ; i < len; i++) {
+                  let res = 0
+                  for (let j = 0; j < len; j++) {
+                    dp[i][0] = dp[i - 1][0] + nums[i]
+                    dp[1][1] = dp[i - 1] - nums[i]
+                  }
                 }
                 console.log(nums, S)
             };
