@@ -12,6 +12,7 @@ max // 最大缓存组件数
 activated
 deactivated
 ```
+[vue 生命周期](../基础/生命周期.md)
 
 ### LRU
 keep-alive中使用到了LRU算法  
