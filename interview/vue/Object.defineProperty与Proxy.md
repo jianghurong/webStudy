@@ -17,8 +17,8 @@ enumerable: 当且仅当该属性的 enumerable 键值为 true 时，该属性�
 value: 该属性对应的值。可以是任何有效的 JavaScript 值。
 writable: 当且仅当属性的 writable 键值为 true 时，属性的值，也就是上面的 value，才能被赋值运算改变。  
 // 存取描述符键值  
-get: 
-set: 
+get:   
+set:  
 :::  
 
 ```js
