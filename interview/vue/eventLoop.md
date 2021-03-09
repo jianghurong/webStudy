@@ -26,3 +26,8 @@ event loop，是指**浏览器或者 node 解决javaScript 单线程运行时不
 ![event loop](https://segmentfault.com/img/remote/1460000016278118)
 event loop 有以下几个重点：  
 1. MacroTask 一次只从队列中取一个任务执行，执行完之后就去执行微任务队列中的任务
+
+执行顺序
+```js
+// 宏任务 > 微任务 event Quene > 宏任务 event Quene
+```
