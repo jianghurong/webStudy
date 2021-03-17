@@ -7,3 +7,9 @@
 1. 开发技术选型：语言框架 + ui 框架 + css扩展语言（ scss ）
 2. debug 技术选项：vConsole（移动调试） + fundebug（错误监控平台）
 3. 移动端适配：响应式（ @media ）、自适应（ lib-flexible + postcss-pxtorem ）
+
+## 回答面试题 ？
+1. 水平居中常用的几大方案。
+* 不要背书式的回答，一定要结构化渐进式的回答。
+比如说最开始用的垂直居中最常见的可能是父元素相对定位，子元素绝对定位。有两种方案一种是
+子元素margin: auto 这里的话可以支持未知 height，另一种是利用 css 的 calc 函数计算出具体位置。 到后面在一些网站上了解flex 布局兴起时，开始使用起 flex，只要设置 justify-content 属性  和 align-items 属性 为 <code>center</code> 就可以了。 还有一些冷门的比如 transform 和 table-cell 布局实现。
