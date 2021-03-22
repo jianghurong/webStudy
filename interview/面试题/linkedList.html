@@ -14,6 +14,41 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+
+    </div>
+    <script>
+        // 新建节点
+        function Node(element) {
+            this.element = element
+            this.next = null
+        }
+        // 新建链表，并自定义头部
+        function LinkedList() {
+            this.head = new Node('head')
+        }
+        // 查找指定节点
+        function findElement(ele) {
+            let currentNode = this.head
+            while (currentNode.element !== ele) {
+                currentNode = currentNode.next
+                if (currentNode === null) break
+            }
+            return currentNode
+        }
+        // 插入指定节点
+        function insertElement(ele, beforeEle) {
+            let newNode = new Node(ele)
+            let boforeNode = findElement(ele)
+            newNode.next = beforeEle.next
+            beforeEle.next= newNode
+        }
+        // 删除指定节点
+        LinkedList()
+        console.log(findElement('head'))
+        console.log(insertElement('data1', this.head))
+        console.log(insertElement('data2', this.head.next))
+        console.log(this.head)
+    </script>
 </body>
 </html>
