@@ -1,0 +1,34 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2021-03-23 10:09:44
+ * @LastEditor: Richard Chiang
+ * @LastEditTime: 2021-03-23 10:10:29
+ * @Email: 19875991227@163.com
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" />
+    <script>
+        const text = document.getElementById('input')
+text.onclick = function(e) {
+    console.log('onClick')
+}
+text.onfoucs = function(e) {
+    console.log('onFoucs')
+}
+text.onmousedown = function(e) {
+    console.log('onMousedown')
+}
+text.onmouseenter = function(e) {
+    console.log('onMouseenter')
+}
+    </script>
+</body>
+</html>
