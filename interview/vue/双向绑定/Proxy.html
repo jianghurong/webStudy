@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue 3.0 双向绑定实现</title>
+</head>
+<body>
+  <input type="text" id="inputName">
+  名字<span id="spanName"></span>
+  <script>
+    let obj = {
+      name: ''
+    }
+    obj = new Proxy(obj, {
+      get(target, prop, value) {
+        return target[prop]
+      },
+      set(target, prop, value) {
+        target[prop] = value
+        observer()
+      }
+    })
+
+    function observer() {
+      spanName.innerHTML = obj.name
+      inputName.value = obj.name
+    }
+    observer()
+
+    inputName.oninput = function() {
+      obj.name = this.value
+    }
+  </script>
+</body>
+</html>

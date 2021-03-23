@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue 2.0 双向绑定实现</title>
+</head>
+<body>
+  <input type="text" id="inputName">
+  名字<span id="spanName"></span>
+  <script>
+    /*
+    * 缺点：
+    * 1. 克隆原始数据
+    * 2. 需要给对象每一个属性进行循环
+    * 3. 不能监听对象
+    */
+    let obj = {
+      name: ''
+    }
+    let newObj = JSON.parse(JSON.stringify(obj))
+    Object.defineProperty(obj, 'name', {
+      get: function() {
+        return newObj.name
+      },
+      set: function(val) {
+        if (val === newObj.name) return
+        newObj.name = val
+        observer()
+      }
+    })
+
+    function observer() {
+      spanName.innerHTML = obj.name
+      inputName.value = obj.name
+    }
+    observer()
+
+    inputName.oninput = function() {
+      obj.name = this.value
+    }
+  </script>
+</body>
+</html>
