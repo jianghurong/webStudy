@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深度优先遍历-DFS</title>
+  <style>
+    body > div {
+      color: red;
+      font-size: 24px;
+    }
+    body > div > div {
+      color: blue;
+      font-size: 22px;
+    }
+    body > div > div > div {
+      color: green;
+      font-size: 20px;
+    }
+    body > div > div > div > div {
+      color: gray;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    爷爷
+    <div>
+      爸爸
+      <div>
+        哥哥
+        <div>
+          表侄子
+        </div>
+      </div>
+      <div>我</div>
+      <div>妹妹</div>
+    </div>
+    <div>
+      二叔
+      <div>堂哥</div>
+      <div>堂姐</div>
+    </div>
+    <div>
+      三叔
+      <div>堂哥</div>
+      <div>
+        堂姐
+        <div>
+          堂外甥
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function dfs(ele, tag) {
+      const childs = ele.getElementsByTagName('div')
+      if (childs !== null) {
+        console.log(childs)
+      }
+    }
+    dfs(document.body, 'div')
+  </script>
+</body>
+</html>
