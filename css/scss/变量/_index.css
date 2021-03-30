@@ -1,0 +1,19 @@
+.button {
+  display: inline-block;
+  font-size: 20px;
+  padding: 0.3em 0.7em;
+  background: #58a;
+  color: pink;
+  text-shadow: 0 0.05em 0.05em rgba(0, 0, 0, 0.5);
+}
+
+.buttons, .button-ok {
+  background: red;
+  font-size: 30px;
+}
+
+.button-ok {
+  color: lightblue;
+}
+
+/*# sourceMappingURL=_index.css.map */
