@@ -1,0 +1,23 @@
+{
+  "name": "Tester",
+  "version": "1.0.0",
+  "description": "<!--\r  * @Author: Richard Chiang\r  * @Date: 2021-03-24 17:37:31\r  * @LastEditor: Richard Chiang\r  * @LastEditTime: 2021-03-24 18:00:04\r  * @Email: 19875991227@163.com\r  * @Description: \r -->\r ## 目录结构\r * src: js代码\r * webpack.config.js: webpack 配置",
+  "main": "webpack.config.js",
+  "private": true,
+  "dependencies": {
+    "webpack-cli": "^4.6.0",
+    "webpack": "^5.28.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.1",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack serve --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
