@@ -1,0 +1,169 @@
+<!--
+ * @Author: Richard Chiang
+ * @Date: 2021-03-29 10:39:47
+ * @LastEditor: Richard Chiang
+ * @LastEditTime: 2021-03-29 12:00:17
+ * @Email: 19875991227@163.com
+ * @Description: css3 transform
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSFORM</title>
+    <style>
+        .transform {
+            width: 200px;
+            height: 100px;
+            background: linear-gradient(rgb(145, 159, 219), rgb(94, 110, 251));
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            transition: 1s all ease-in-out;
+        }
+        
+        .transform-translate,
+        .transform-scale,
+        .transform-rotate,
+        .transform-skew {
+            display: flex;
+        }
+
+        .translate {
+            transform: translate(20px, 20px);
+        }
+        .translateX {
+            transform: translateX(20px);
+        }
+        .translateY {
+            transform: translateY(20px);
+        }
+
+        .scale {
+            transform: scale(1.2, 1.2);
+        }
+        .scaleX {
+            transform: scaleX(1.2);
+        }
+        .scaleX {
+            transform: scaleY(1.2);
+        }
+
+        .rotate {
+            transform: rotate(30deg);
+        }
+        .rotateX {
+            transform: rotateX(30deg);
+        }
+        .rotateY {
+            transform: rotateY(30deg);
+        }
+        .rotateZ {
+            transform: rotateZ(30deg);
+        }
+        .rotate3d {
+            transform: rotate3d(120, 120, 120, 30deg);
+        }
+        .skew {
+            transform: skew(30deg, 30deg);
+        }
+        .skewX {
+            transform: skewX(30deg);
+        }
+        .skewY {
+            transform: skewY(30deg);
+        }
+        .perspective {
+            transform: perspective(500);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>box</h2>
+    <div class="transform">CONTENT</div>
+
+    <h2>translate</h2>
+    <div class="transform-translate">
+        <div>
+            <h3>translate(x, y)</h3>
+            <div class="transform translate">CONTENT</div>
+        </div>
+        <div>
+            <h3>translateX(x)</h3>
+            <div class="transform translateX">CONTENT</div>
+        </div>
+        <div>
+            <h3>translateY(y)</h3>
+            <div class="transform translateY">CONTENT</div>
+        </div>
+    </div>
+    <p class="tips">可以看到 <code>transform</code> 作用的元素并不会影响元素位置，得知 <code>transform</code> 并不会引起页面回流</p>
+
+    <h2>scale</h2>
+    <div class="transform-scale">
+        <div>
+            <h3>scale(x, y)</h3>
+            <div class="transform scale">CONTENT</div>
+        </div>
+        <div>
+            <h3>scale(x)</h3>
+            <div class="transform scaleX">CONTENT</div>
+        </div>
+        <div>
+            <h3>scale(y)</h3>
+            <div class="transform scaleY">CONTENT</div>
+        </div>
+    </div>
+
+    <h2>rotate</h2>
+    <div class="transform-rotate">
+        <div>
+            <h3>rotate(angle)</h3>
+            <div class="transform rotate">CONTENT</div>
+        </div>
+        <div>
+            <h3>rotateX(angle)</h3>
+            <div class="transform rotateX">CONTENT</div>
+        </div>
+        <div>
+            <h3>rotateY(angle)</h3>
+            <div class="transform rotateY">CONTENT</div>
+        </div>
+        <div>
+            <h3>rotateZ(angle)</h3>
+            <div class="transform rotateZ">CONTENT</div>
+        </div>
+        <div>
+            <h3>rotate3d(x, y, z, angle)</h3>
+            <div class="transform rotate3d">CONTENT</div>
+        </div>
+    </div>
+
+    <h2>skew</h2>
+    <div class="transform-skew">
+        <div>
+            <h3>skew(x-angle, y-angele)</h3>
+            <div class="transform skew">CONTENT</div>
+        </div>
+        <div>
+            <h3>skewX(x-angle)</h3>
+            <div class="transform skewX">CONTENT</div>
+        </div>
+        <div>
+            <h3>skewX(y-angle)</h3>
+            <div class="transform skewY">CONTENT</div>
+        </div>
+    </div>
+
+    <h2>perspective</h2>
+    <div class="transform-perspective">
+        <div>
+            <h3>perspective</h3>
+            <div class="transform perspective">CONTENT</div>
+        </div>
+    </div>
+    <p class="tips"><code>perspective</code>元素内的属性使用<code>transform</code>才会观察到变化    </p>
+</body>
+
+</html>

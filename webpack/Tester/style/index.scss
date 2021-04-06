@@ -1,0 +1,29 @@
+.button {
+    display: inline-block;
+    padding: 0.3em 0.7em;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.4em;
+    color: #333;
+    text-shadow: 0 0.05em 0.05em rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.05em 0.05em rgba(0, 0, 0, 0.1);
+    font-size: 125%;
+    line-height: 1.5em;
+    user-select: none;
+    cursor: pointer;
+}
+.button:hover {
+    opacity: 0.8;
+}
+
+.button-primary {
+    @extend .button;
+    background: #58a;
+    color: #fff;
+}
+
+.button-danger {
+    @extend .button;
+    background: lightcoral;
+    color: #fff;
+}
