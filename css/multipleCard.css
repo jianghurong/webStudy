@@ -1,0 +1,79 @@
+.level {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -140px;
+  margin-top: -180px;
+  user-select: none;
+}
+.level > div {
+  position: relative;
+  width: 280px;
+  height: 140px;
+  border-radius: 12px;
+  color: pink;
+  cursor: pointer;
+  opacity: 0.9;
+  transform: rotateX(45deg) rotateY(-15deg) rotate(45deg);
+  transition: all 0.4s ease-in-out;
+}
+.level div[class^=level-]:hover {
+  transform: rotateX(30deg) rotateY(-15deg) rotate(30deg) translate(-20px, 50px);
+  opacity: 0.6;
+}
+.level .level-one {
+  margin-top: -200px;
+  background: #8063e1;
+  background-image: linear-gradient(135deg, #bd7be8,#8063e1);
+  box-shadow: 20px 20px 60px rgba(34, 50, 84, 0.5), 1px 1px 0px 1px #8063e1;
+  z-index: 4;
+}
+.level .level-two {
+  margin-top: -100px;
+  background: #dfe20e;
+  background-image: linear-gradient(135deg, #ddfc70,#dfe20e);
+  box-shadow: 20px 20px 60px rgba(34, 50, 84, 0.5), 1px 1px 0px 1px #dfe20e;
+  z-index: 3;
+}
+.level .level-three {
+  margin-top: -0px;
+  background: #22e208;
+  background-image: linear-gradient(135deg, #74ee6f,#22e208);
+  box-shadow: 20px 20px 60px rgba(34, 50, 84, 0.5), 1px 1px 0px 1px #22e208;
+  z-index: 2;
+}
+.level .level-four {
+  margin-top: 100px;
+  background: #ec4a7a;
+  background-image: linear-gradient(135deg, #e99ec9,#ec4a7a);
+  box-shadow: 20px 20px 60px rgba(34, 50, 84, 0.5), 1px 1px 0px 1px #ec4a7a;
+  z-index: 1;
+}
+.level div[class^=level-]:hover:after {
+  transform: translateX(100%);
+  transition: all 1.2s ease-in-out;
+}
+.level div[class^=level-]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background-image: linear-gradient(60deg, rgba(0, 0, 0, 0) 20%, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 80%);
+}
+.title {
+  position: absolute;
+  top: 28px;
+  left: 15px;
+  font-size: 26px;
+  font-weight: bold;
+}
+.content {
+  position: absolute;
+  font-weight: 700;
+  bottom: 15px;
+  left: 15px;
+  font-size: 16px;
+}
