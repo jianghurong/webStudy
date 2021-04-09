@@ -1,3 +1,60 @@
+## 使用事件链
+这个模式在 <code>javaScript</code> 中是非常有用的，并且你可以在很多库例如 <code>jquery</code> 或者 <code>lodash</code> 中看见它的存在。
+它会让你的代码非常有表现力，并且不啰嗦。因为这个原因。我建议，使用事件链并且它会使你的代码变得多干净。在你的 <code>class</code> 函数中，简单的
+返回 <code>this</code> 在每个函数的结尾，你可以链接更多 <code>class</code> 中的 <code>method</code>。
+```js
+// bad
+class Car {
+    constructor(make, model, color) {
+        this.make = make
+        this.model = model
+        this.color = color
+    }
+
+    setMake(make) {
+        this.make = make
+    }
+
+    setModel(model) {
+        this.model = model
+    }
+
+    setColor(color) {
+        this.color = color
+    }
+}
+const car = new Car('ford', 'f-150', 'blue')
+car.setColor('pink')
+car.setMolde('large')
+
+// good
+class Car {
+    constructor(make, model, color) {
+        this.make = make
+        this.model = model
+        this.color = color
+    }
+
+    setMake(make) {
+        this.make = make
+        return this
+    }
+
+    setModel(model) {
+        this.model = model
+        return this
+    }
+
+    setColor(color) {
+        this.color = color
+        return this
+    }
+}
+const car = new Car('ford', 'f-150', 'blue')
+    .setColor('pink')
+    .setModel('large')
+```
+
 ### 不要使用全局函数  
 ```js
 // bad
