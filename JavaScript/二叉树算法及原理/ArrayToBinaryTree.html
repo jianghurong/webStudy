@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let root = [1,2,3,4,5,null,6,7,null,null,null,null,8]
+        function TreeNode (val, left, right) {
+            this.val = (val === undefined ? 0 : val)
+            this.left = (left === undefined ? null : left)
+            this.right = (right === undefined ? null: right)
+        }
+        function isEmpty (value) {
+            return value === undefined || value === null
+        }
+        // 运用对象引用的知识
+       function arrayToBinaryTree (arr) {
+            if (!arr || !arr.length) return null
+            const head = new TreeNode(arr[0]) // 根节点
+            let index = 0 // 用于记录当前节点的位置
+            let queue = [head] // 用于存储节点
+            while (index < arr.length) {
+                index++
+                const parent = queue.shift()
+                if (!isEmpty(arr[index])) {
+                    const node = new TreeNode(arr[index])
+                    parent.left = node
+                    queue.push(node)
+                }
+                index++
+                if (!isEmpty(arr[index])) {
+                    const node = new TreeNode(arr[index])
+                    parent.right = node
+                    queue.push(node)
+                }
+            }
+            return head
+       }
+       const tree = arrayToBinaryTree(root)
+       console.log(tree)
+    </script>
+</body>
+</html>
