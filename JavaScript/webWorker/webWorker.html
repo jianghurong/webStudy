@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebWorker</title>
+</head>
+<body>
+    <input placeholder="value1" id="first" />
+    *
+    <input placeholder="value2" id="second" />
+    =
+    <div id="result"></div>
+    <div>如触发结果为15，则worker终止</div>
+    
+    <div>subWorker:</div>
+    <div id="subWorker"></div>
+
+    <p></p>
+    <input placeholder="value1" id="sharedFisrt" />
+    *
+    <input placeholder="value2" id="sharedSecond" />
+    <div>sharedWorker</div>
+    <div id="sharedWorker"></div>
+
+    
+    <script src="./index.js">
+    </script>
+</body>
+</html>
